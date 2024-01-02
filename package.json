@@ -1,0 +1,21 @@
+{
+	"name": "discord.js-v14-handler-typescript",
+	"description": "Lightweight, modular discord.js v14 handler!",
+	"scripts": {
+		"build": "cls && tsc",
+		"dev": "cls && tsc && nodemon build/index.js"
+	},
+	"dependencies": {
+		"@discordjs/rest": "^2.2.0",
+		"@types/i18n": "^0.13.10",
+		"chalk": "^4.1.2",
+		"discord.js": "^14.14.1",
+		"dotenv": "^16.3.1",
+		"i18n": "^0.15.1",
+		"mongoose": "^8.0.3",
+		"nodemon": "^3.0.2"
+	},
+	"devDependencies": {
+		"@types/chalk": "^2.2.0"
+	}
+}
