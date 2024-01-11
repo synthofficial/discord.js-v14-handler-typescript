@@ -1,5 +1,20 @@
-import { SlashCommandBuilder, CommandInteraction, Collection, PermissionResolvable, Message, AutocompleteInteraction, ChatInputCommandInteraction, TextBasedChannel, VoiceChannel, Guild, GuildChannel, GuildEditOptions, Client } from "discord.js"
+import { SlashCommandBuilder, CommandInteraction, Collection, PermissionResolvable, Message, AutocompleteInteraction, ChatInputCommandInteraction, TextBasedChannel, VoiceChannel, Guild, GuildChannel, GuildEditOptions, Client, ModalSubmitInteraction, ModalSubmitInteractionCollectorOptions, AwaitModalSubmitOptions } from "discord.js"
 import mongoose from "mongoose"
+
+export interface Button{
+    name: string,
+    execute: (interaction : ButtonInteraction) => void
+}
+
+export interface SelectMenu{
+    name: string,
+    execute: (interaction : StringSelectMenuInteraction) => void
+}
+
+export interface Modal{
+    name: string,
+    execute: (interaction : ModalSubmitInteraction) => void
+}
 
 export interface SlashCommand{
     cmd: SlashCommandBuilder,
@@ -37,5 +52,8 @@ declare module "discord.js"{
     export interface Client{
         slashCommands: Collection<string, SlashCommand>
         events: Collection<string, Event>
+        buttons: Collection<string, Button>
+        selectMenus: Collection<string, SelectMenu>
+        modals: Collection<string, Modal>
     }
 }

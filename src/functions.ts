@@ -1,5 +1,5 @@
 import chalk from "chalk";
-import { EmbedBuilder, Interaction, ColorResolvable } from "discord.js";
+import { EmbedBuilder, Interaction, ColorResolvable, ModalBuilder } from "discord.js";
 import { i18n } from "./util/i18n.js";
 
 type colorTypes = "info" | "debug" | "error" | "variable" | "warn"
